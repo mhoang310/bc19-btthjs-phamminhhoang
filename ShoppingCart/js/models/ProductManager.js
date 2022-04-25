@@ -5,7 +5,7 @@ function ProductManager() {
 ProductManager.prototype.getProducts = function () {
     // Call API to get products
     return new Promise((resolve, reject) => {
-        axios.get("https://621b2d63faa12ee450073cb2.mockapi.io/api/products").then((result) => {
+        axios.get("https://625a7352cda73d132d1f54c3.mockapi.io/api/products").then((result) => {
             this.products = result.data.map((item) => {
                 const product = new Product (                                        
                     item.name,
@@ -18,14 +18,13 @@ ProductManager.prototype.getProducts = function () {
                     item.type,
                 );
                 // Gan id cho object
-                product.id = item.id;
-                product.quatity = item.quatity;
+                product.id = item.id;                
                 
                 return product;
             });
-            localStorage.setItem("products", JSON.stringify(productManager.products));
-            
+            localStorage.setItem("products", JSON.stringify(productManager.products));            
             resolve();
+            
         }).catch((error) => {
             reject(error)
             alert("Cannot get product list");

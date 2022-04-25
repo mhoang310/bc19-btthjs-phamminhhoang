@@ -41,11 +41,10 @@
                     <i class="fas fa-shopping-cart" style="font-size:2rem;" data-toggle="modal" data-target="#exampleModal"></i>
                 </button>
                 
-                <span class="total-qty" id="total-qtyy"></span>
-                
+                <span class="total-qty" id="total-qtyy">0</span>                
 
             </div>
-            <div onclick="sideNav(0)" class="cover" style="display: none;"></div>
+            
             <div class="cover purchase-cover"></div>
             <div class="cart">
                 <!-- Modal -->
@@ -65,9 +64,9 @@
                                     <tr>
                                         <th>No.</th>                                        
                                         <th>Name</th>
-                                        <th>Image</th>
-                                        <th>Price</th>
+                                        <th>Image</th>                                        
                                         <th>Quantity</th>
+                                        <th>Total</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -75,47 +74,26 @@
                             </table>    
                         </div>
                         <div class="modal-footer">
-                        
+                            <strong class="mr-3">
+                                Total: $ 
+                                <span class="total"  id="totalEl">0</span>
+                            </strong>
+                            <button class="btnn buy" id="buyEl">
+                                Purchase 
+                                <i class="fas fa-credit-card" style="color:#6665dd;"></i>
+                            </button>
+                            <button class="btnn clear" id="deleteEL">
+                                Clear Cart 
+                                <i class="fas fa-trash" style="color:#bb342f;"></i>
+                            </button>
                         </div>
                     </div>
                     </div>
                 </div>
-
-                <div class="side-nav" style="right: -100%;">
-                    <button onclick="sideNav(0)">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <h2>Cart</h2>
-                    <div class="cart-items">
-                        <span class="empty-cart">Looks Like You Haven't Added Any Product In The Cart</span>
-                    </div>
-                    <div class="final">
-                        <strong>
-                            Total: $ 
-                            <span class="total">0</span>
-                        </strong>
-                        <div class="action">
-                            <button onclick="buy(1)" class="btn buy">
-                                Purchase 
-                                <i class="fas fa-credit-card" style="color:#bb342f;"></i>
-                            </button>
-                            <button onclick="clearCart()" class="btn clear">
-                                Clear Cart 
-                                <i class="fas fa-trash" style="color:#bb342f;"></i>
-                            </button>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-            <div class="stock-limit">
-                <em>You Can Only Buy 10 Items For Each Product</em>
-                <button class="btn-ok" onclick="limitPurchase(this)">ok</button>
-            </div>
-            <div class="order-now"></div>
+                
+            </div>            
         </div>
-    </div>
-
-    
+    </div>   
 
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
